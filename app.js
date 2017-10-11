@@ -1,15 +1,18 @@
+var elDays = document.getElementById('days');
+var elList = document.querySelector('ul');
+var elH1 = document.getElementById('monthName');
 
+function createCalendar(days, choice){
+    elList.innerHTML = '';
+    elH1.textContent = choice;
+    for(var i = 0; i <= days; i++) {
+    var elListItem = document.createElement('li');
+    elListItem.textContent = i;
+    elList.appendChild(elListItem);
+    }
+}
 
-var bodyTag = document.getElementsByTagName('BODY')[0];
-var newDiv = document.createElement('div');
-var newText = document.createTextNode('DOM manipulation');
+createCalendar(31, 'January');
 
-bodyTag.appendChild(newDiv);
-newDiv.appendChild(newText);
-//MAKE SURE TO MAKE COMMENTS!!!
-var monthDiv = document.createElement('div'); //creates div
-monthDiv.id = 'monthSelector'; // makes div have id monthSelector
-
-bodyTag.appendChild(monthDiv);
-
+   
 
