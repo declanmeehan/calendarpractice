@@ -1,6 +1,18 @@
 var elDays = document.getElementById('days');
 var elList = document.querySelector('ul');
-var elH1 = document.getElementById('monthName');
+var elH1 = document.querySelector('h1');
+var select = document.querySelector('select');
+
+select.onchange = function(){
+    var choice = select.value;
+    var days = 31;
+    if(choice === 'February'){
+        days = 28;
+    } else if(choice === 'April' || choice === 'June' || choice === 'September' || choice === 'November'){
+        days = 30;
+    } 
+    createCalendar(days, choice);
+}
 
 function createCalendar(days, choice){
     elList.innerHTML = '';
